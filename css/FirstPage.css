@@ -9,7 +9,7 @@ body {
 }
 
 .Container {
-  width: 800px;
+  width: 500px;
   height: 600px;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -26,23 +26,29 @@ body {
 
 .title {
   color: #338087;
-  margin-top: 10px;
+  margin-top: 15px;
+  text-align: center;
 }
 
 .subtitle {
   color: #6fb3b8;
 }
 
+
+img{
+  filter: invert(100%);
+}
+
 .inputs {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 input {
   width: 250px;
-  padding: 5px;
+  padding: 10px;
   margin: 5px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -50,10 +56,12 @@ input {
   color: #338087 ;
 }
 
+
 input:focus {
   border-color: #338087;
   outline: none;
   box-shadow: 0px 2px 4px;
+  
 }
 
 .label {
@@ -68,8 +76,8 @@ input:focus {
 }
 
 .icon-container {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background-color: #338087;
   display: flex;
   justify-content: center;
@@ -81,7 +89,7 @@ input:focus {
   overflow: hidden;
   position: relative;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 30px;
   border: 2px solid#338087;
 }
 
@@ -100,7 +108,7 @@ input:focus {
 }
 
 button {
-  width: 260px;
+  width: 270px;
   padding: 10px;
   margin-top: 10px;
   margin-left: 5px;
@@ -109,7 +117,7 @@ button {
   border: none;
   border-radius: 10px;
   background-color: #338087;
-  color: black;
+  color: white;
   font-size: 15px;
   font-weight: bold;
 }
@@ -117,4 +125,6 @@ button {
 button:hover {
   background-color: #6fb3b8;
   cursor: pointer;
+  border: 1px solid #338087;
+  
 }
