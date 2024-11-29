@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="icon" href="/img/QR_code_for_mobile_English_Wikipedia.svg">
+    <link rel="stylesheet" href="css/FirstPage.css">
+</head>
+<body>
+    <div class="Container">
+        <h1 class="title">Hello, Welcome to our QR Code Generator</h1>
+        <h2 class="subtitle">Please, insert your data </h2>
+
+        
+
+        
+            <div
+        class="icon-container" 
+        onclick="document.getElementById('image').click();"
+        id="imageIcon" 
+      >
+        <img src="/img/camera-add.svg" alt="Camera Icon">
+      </div>
+
+      <input type="file"  id="image">
+
+            
+      <div class="inputs">
+            <label for="" class="label">Name</label>
+            <input type="text"  id="name">
+
+            <label for="" class="label">Email</label>
+            <input type="email"  id="email">
+
+            <label for="" class="label">Phone Number</label>
+            <input type="number"  id="number">
+
+            <button class="generate" id="generate">Generate QR Code</button>
+        </div>
+
+    </div>
+
+    <script src="/dist/UserDataCollection.js"></script>
+</body>
+</html>
