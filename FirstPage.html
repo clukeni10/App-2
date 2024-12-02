@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-ao">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QR Code Generator</title>
-    <link rel="icon" href="/img/QR_code_for_mobile_English_Wikipedia.svg">
-    <link rel="stylesheet" href="css/FirstPage.css">
-</head>
-<body>
+    <link rel="icon" href="/img/QR_code_for_mobile_English_Wikipedia.svg" />
+    <link rel="stylesheet" href="css/FirstPage.css" />
+
+    <script type="module" src="/dist/VCard.js"></script>
+  </head>
+  <body>
     <div class="Container">
-        <h1 class="title">Welcome to our QR Code Generator</h1>
-        <h2 class="subtitle">Please, insert your data </h2>
+      <h1 class="title">Welcome to our QR Code Generator</h1>
+      <h2 class="subtitle">Please, insert your data</h2>
 
-        
-
-        
-            <div
-        class="icon-container" 
-        onclick="document.getElementById('image').click();"
-        id="imageIcon" 
-      >
-        <img  src="/img/camera-add.svg" alt="Camera Icon">
+      <div class="icon-container" id="imageIcon">
+        <img src="/img/camera-add.svg" alt="Camera Icon" />
       </div>
+      <input type="file" id="image" style="display: none;" />
 
-      <input type="file"  id="image">
-
-            
       <div class="inputs">
-            <label for="" class="label">Name</label>
-            <input type="text"  id="name">
+        <label for="name" class="label">Name</label>
+        <input type="text" id="name" />
 
-            <label for="" class="label">Email</label>
-            <input type="email"  id="email">
+        <label for="email" class="label">Email</label>
+        <input type="email" id="email" />
 
-            <label for="" class="label">Phone Number</label>
-            <input type="number"  id="number">
+        <label for="number" class="label">Phone Number</label>
+        <input type="number" id="number" />
 
-            <button class="generate" id="generate">Generate QR Code</button>
-        </div>
-
+        <button class="generate" id="generate">Generate QR Code</button>
+      </div>
     </div>
 
-    <script src="/dist/UserDataCollection.js"></script>
-</body>
+    <!-- Modal -->
+    <div id="qrCodeModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>QR Code Gerado:</h3>
+        <img id="QRCodeImageModal" alt="QR Code" src="" />
+      </div>
+    </div>
+
+    
+  </body>
 </html>
