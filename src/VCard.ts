@@ -1,3 +1,5 @@
+
+
 let imageBase64: string = "";
 
 // Função para gerar o conteúdo do vCard
@@ -13,7 +15,7 @@ END:VCARD`;
 
 // Função para gerar o QR Code
 function generateQRCode(vCardData: string): string {
-  const qrCodeURL = `https://api.qrserver.com/create-qr-code/?size=150x150&data=${encodeURIComponent(
+  const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
     vCardData
   )}`;
   return qrCodeURL;

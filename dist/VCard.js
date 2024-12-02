@@ -13,7 +13,7 @@ END:VCARD`;
 }
 // Função para gerar o QR Code
 function generateQRCode(vCardData) {
-    const qrCodeURL = `https://api.qrserver.com/create-qr-code/?size=150x150&data=${encodeURIComponent(vCardData)}`;
+    const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(vCardData)}`;
     return qrCodeURL;
 }
 // Lidar com o evento de upload de imagem
