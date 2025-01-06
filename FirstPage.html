@@ -7,7 +7,9 @@
     <link rel="icon" href="/img/QR_code_for_mobile_English_Wikipedia.svg" />
     <link rel="stylesheet" href="css/FirstPage.css" />
 
-    <script type="module" src="/dist/VCard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling/lib/qr-code-styling.js"></script>
+
+    <script type="module" src="./dist/VCard.js"></script>
   </head>
   <body>
     <div class="Container">
@@ -15,7 +17,7 @@
       <h2 class="subtitle">Please, insert your data</h2>
 
       <div class="icon-container" id="imageIcon">
-        <img src="/img/camera-add.svg" alt="Camera Icon" />
+        <img src="./img/camera.png" alt="Camera Icon" />
       </div>
       <input type="file" id="image" style="display: none;" />
 
@@ -39,6 +41,7 @@
         <span class="close">&times;</span>
         <h3>QR Code Gerado:</h3>
         <img id="QRCodeImageModal" alt="QR Code" src="" />
+        <div id="qrContainer"></div>
       </div>
     </div>
 
