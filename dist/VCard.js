@@ -2,13 +2,12 @@
 var _a, _b, _c;
 let imageBase64 = "";
 // Função para gerar o conteúdo do vCard
-function generateVCard(name, phone, email, imageUrl) {
+function generateVCard(Pessoa) {
     return `BEGIN:VCARD
 VERSION:3.0
-FN:${name}
-TEL:${phone}
-EMAIL:${email}
-PHOTO;ENCODING=b;TYPE=JPEG:${imageUrl.replace("data:image/jpeg;base64,", "")}
+FN:${Pessoa.name}
+TEL:${Pessoa.phone}
+EMAIL:${Pessoa.email}
 END:VCARD`;
 }
 // Função para gerar o QR Code
@@ -34,11 +33,14 @@ function generateQRCode(vCardData) {
 });
 // Exibir modal com o QR Code gerado
 (_b = document.getElementById("generate")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", function () {
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("number").value;
-    const email = document.getElementById("email").value;
-    if (name && phone && email && imageBase64) {
-        const vCardData = generateVCard(name, phone, email, imageBase64);
+    const user = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("number").value,
+        email: document.getElementById("email").value,
+    };
+    const vCardData = generateVCard(user);
+    const qrCodeURL = generateQRCode(vCardData);
+    if (user) {
         const qrCodeUrl = generateQRCode(vCardData);
         const qrCodeImage = document.getElementById("QRCodeImageModal");
         qrCodeImage.src = qrCodeUrl;
