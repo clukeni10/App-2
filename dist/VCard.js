@@ -48,6 +48,23 @@ function resizeImage(file, maxWidth, maxHeight) {
     });
 }
 let imageBase64 = "";
+<<<<<<< HEAD
+// Função para gerar o conteúdo do vCard
+function generateVCard(Pessoa) {
+    return `BEGIN:VCARD
+VERSION:3.0
+FN:${Pessoa.name}
+TEL:${Pessoa.phone}
+EMAIL:${Pessoa.email}
+END:VCARD`;
+}
+// Função para gerar o QR Code
+function generateQRCode(vCardData) {
+    const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(vCardData)}`;
+    return qrCodeURL;
+}
+=======
+>>>>>>> 15aea4146e48bd2ffc7f95d7c63ca19a3f3335bc
 // Lidar com o evento de upload de imagem
 (_a = document.getElementById("image")) === null || _a === void 0 ? void 0 : _a.addEventListener("change", function (event) {
     const input = event.target;
@@ -62,6 +79,23 @@ let imageBase64 = "";
         });
     }
 });
+<<<<<<< HEAD
+// Exibir modal com o QR Code gerado
+(_b = document.getElementById("generate")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", function () {
+    const user = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("number").value,
+        email: document.getElementById("email").value,
+    };
+    const vCardData = generateVCard(user);
+    const qrCodeURL = generateQRCode(vCardData);
+    if (user) {
+        const qrCodeUrl = generateQRCode(vCardData);
+        const qrCodeImage = document.getElementById("QRCodeImageModal");
+        qrCodeImage.src = qrCodeUrl;
+        const modal = document.getElementById("qrCodeModal");
+        modal.style.display = "block";
+=======
 // Função para gerar o QR Code
 const generateQRCode = () => {
     const name = document.getElementById("name").value;
@@ -70,6 +104,7 @@ const generateQRCode = () => {
     if (!name || !email || !number) {
         alert("Por favor, preencha os campos obrigatórios: Nome, Email e Número.");
         return;
+>>>>>>> 15aea4146e48bd2ffc7f95d7c63ca19a3f3335bc
     }
     // Formatar o vCard
     const vCard = `BEGIN:VCARD
