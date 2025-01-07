@@ -7,27 +7,12 @@
     <link rel="icon" href="/img/QR_code_for_mobile_English_Wikipedia.svg" />
     <link rel="stylesheet" href="css/FirstPage.css" />
 
-
     <script type="module" src="/dist/VCard.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling/lib/qr-code-styling.js"></script>
-
-    <script type="module" src="./dist/VCard.js"></script>
-
   </head>
   <body>
     <div class="Container">
-      <h1 class="title">Create a VCard</h1>
+      <h1 class="title">VCard Creator</h1>
       <h2 class="subtitle">Please, insert your data</h2>
-
-
-      <div class="icon-container" id="imageIcon">
-        <img src="./img/camera.png" alt="Camera Icon" />
-      </div>
-      <input type="file" id="image" style="display: none;" />
-
 
       <div class="inputs">
         <label for="name" class="label">Name</label>
@@ -43,21 +28,12 @@
       </div>
     </div>
 
-    <!-- Modal -->
     <div id="qrCodeModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-
-        <h3>QR Code Generated:</h3>
-        <img id="QRCodeImageModal" alt="QR Code" />
-
         <h3>QR Code Gerado:</h3>
         <img id="QRCodeImageModal" alt="QR Code" src="" />
-        <div id="qrContainer"></div>
-
       </div>
-      
     </div>
-   
   </body>
 </html>
