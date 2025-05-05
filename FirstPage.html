@@ -1,108 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-ao">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QR Code Generator</title>
-    <link rel="icon" href="/img/QR_code_for_mobile_English_Wikipedia.svg" />
-    <link rel="stylesheet" href="css/FirstPage.css" />
-
-    <script type="module" src="/dist/VCard.js"></script>
-  </head>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerador de QR Code</title>
+  <link rel="stylesheet" href="css/FirstPage.css">
+</head>
+<body>
   <body>
-    <h1 class="title">VCard Creator</h1>
-    <div class="father">
-      <div class="Container">
-        <h2 class="subtitle">Please, insert your data</h2>
-
-        <div class="inputs">
-          <label for="image" class="label">Imagem</label>
-          <input type="file" id="imageInput" class="imageInput" accept="image/*">
-          <button class="custom-button" id="uploadButton">Selecionar Imagem</button>
-
-          <label for="name" class="label">Name</label>
-          <input type="text" id="name" />
-
-          <label for="number" class="label">Phone Number</label>
-          <input type="number" id="number" />
-
-          <label for="email" class="label">Email</label>
-          <input type="email" id="email" />
-
-          <label for="job" class="label">Job</label>
-          <input type="text"  id="job">
-
-          <label for="location" class="label">Location</label>
-          <input type="text"  id="location">
-         
-
-          <button class="generate" id="generate">Generate QR Code</button>
-        </div>
-      </div>
-
-      <div class="containerView">
-        <div class="icons">
-          <div id="phoneIcon"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-          </svg></div>
-          <div id="emailIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
-          </svg></div>
-          <div id="locationIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-          </svg></div>
-        </div>
-        <div class="userImage">
-          <div class="imgborder">
-            <img id="imagePreview" src="" alt="" />
-          </div>
-          <div class="userName">
-            <p class="full-name"><span id="nameDisplay">Full Name</span></p>
-          </div>
-          <div class="userJob"><span id="jobDisplay">Job Position.</span></div>
-        </div>
-        
-        <div class="userData">
-          
-          <div class="userDescription">
-            This is <span id="nameDisplay2">User</span>, and I am a <span id="jobDisplay2">Job Position.</span>
-          </div>
-          
-        </div>
-        
-      </div>
-    </div>
-
-    <div id="phoneModal" class="modal">
-      <div class="modal-content">
-          <span class="close" id="closePhoneModal">&times;</span>
-          <h3>Telefone</h3>
-          <p id="phoneDisplay"></p>
-      </div>
-  </div>
+    <h1>QR Code Oficial</h1>
+    <button id="generateBtn">Gerar QR Code</button>
+    <div id="qrCodeContainer" ></div>
   
-  <div id="emailModal" class="modal">
-      <div class="modal-content">
-          <span class="close" id="closeEmailModal">&times;</span>
-          <h3>Email</h3>
-          <p id="emailDisplay"></p>
-      </div>
-  </div>
-  
-  <div id="locationModal" class="modal">
-      <div class="modal-content">
-          <span class="close" id="closeLocationModal">&times;</span>
-          <h3>Localização</h3>
-          <p id="locationDisplay"></p>
-      </div>
-  </div>
 
-    <div id="qrCodeModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3>QR Code Gerado:</h3>
-        <img id="QRCodeImageModal" alt="QR Code" src="" />
-      </div>
-    </div>
-  </body>
+  <script type="module" src="dist/VCard.js"></script>
+</body>
 </html>
